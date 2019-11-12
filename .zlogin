@@ -1,0 +1,1 @@
+/Users/alexhope/.zprezto/runcoms/zlogin
