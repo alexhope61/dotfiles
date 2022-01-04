@@ -19,6 +19,18 @@ if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
 fi
 # Customize to your needs...
 
+source $HOME/.iterm2_shell_integration.zsh
+
+
+
+iterm2_print_user_vars() {
+  KUBECONTEXT=$(CTX=$(kubectl config current-context) 2> /dev/null;if [ $? -eq 0 ]; then echo $CTX;fi)
+  KUBENAMESPACE=$(NS=$(kubectl config view --minify --output=jsonpath='{..namespace}') 2> /dev/null;if [ $? -eq 0 ]; then echo $NS;fi)
+  iterm2_set_user_var kubeContext $KUBECONTEXT
+  iterm2_set_user_var kubeNamespace $KUBENAMESPACE
+}
+
+
 export GOPATH=$HOME
 export PATH=$GOPATH/bin:$PATH
 
@@ -31,3 +43,4 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # cloudplatform: add Shopify clusters to your local kubernetes config
 export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}$HOME/.kube/config:$HOME/.kube/config.shopify.cloudplatform
+test -e /Users/alexhope/.iterm2_shell_integration.zsh && source /Users/alexhope/.iterm2_shell_integration.zsh || true
