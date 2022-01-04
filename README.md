@@ -16,6 +16,12 @@
   done
 ```
 
+### iterm2
+1. Install iterm2
+1. Install Shell Integration 
+1. Preferences > General > `Load preferences from a custom folder or URL:` select this folder
+1. Select `Save changes to folder when iTerm2 quits`
+
 ### Vim stuff
 1. Symlink the vim stuff
 ```
@@ -40,3 +46,16 @@
 
 ### vscode
 1. Download vscode from https://code.visualstudio.com/download and install it
+1. Install the following extensions:
+```
+CoenraadS.bracket-pair-colorizer-2
+dakara.transformer
+golang.go
+hashicorp.terraform
+mischah.relaxed-theme
+ms-azuretools.vscode-docker
+ms-python.python
+scala-lang.scala
+softwareape.numbermonger
+tberman.json-schema-validator
+```
